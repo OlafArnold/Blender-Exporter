@@ -98,6 +98,7 @@ def load_handler(dummy):
 
 def register():
     prop.register()
+    ui.register()
     bpy.utils.register_module(__name__)
     bpy.app.handlers.load_post.append(load_handler)
     # register keys for 'render 3d view', 'render still' and 'render animation'
@@ -109,6 +110,7 @@ def register():
 
 def unregister():
     prop.unregister()
+    ui.unregister()
     # unregister keys for 'render 3d view', 'render still' and 'render animation'
     kma = bpy.context.window_manager.keyconfigs.addon.keymaps['Screen']
     for kmi in kma.keymap_items:
